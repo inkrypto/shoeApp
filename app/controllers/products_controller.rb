@@ -41,11 +41,13 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+
   end
 
   def update
+    vendor = Vendor.find_by(:name => params[:vendor_name])
     @product = Product.find(params[:id])
-    @product.update({ :price => params[:price], :title => params[:title], :image => params[:image], :description => params[:description], :category => params[:category], :vendor_id => params[:vendor_id] })
+    @product.update({ :price => params[:price], :title => params[:title], :image => params[:image], :description => params[:description], :category => params[:category], :vendor_id => vendor.id })
 
     flash[:success] = "Shoe Updated"
     redirect_to "/products/#{@product.id}"
