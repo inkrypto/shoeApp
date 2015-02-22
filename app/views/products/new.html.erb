@@ -1,0 +1,36 @@
+<h3>New Shoes</h3>
+
+<%= form_tag '/products' do %>
+<%= form_tag '/vendors' do %>
+<!-- <div class="well">
+  <div class="class col-md-3 col-sm-6"> -->
+  <ul>
+    <li>
+      <%= label_tag :price %> 
+      <%= text_field_tag :price %>  
+    </li>
+    <li>
+    <%= label_tag :title %> 
+    <%= text_field_tag :title %>
+    <li>
+    <%= label_tag :image %> 
+    <%= text_field_tag :image %>
+    </li>
+    <li>
+      <%= label_tag :description %> 
+      <%= text_field_tag :description %>
+    </li>
+    <li>
+    <%= label_tag :category %> 
+    <%= text_field_tag :category %>
+    </li>
+    <li>
+    <%= label_tag :vendor_name %> 
+    <%= text_field_tag :vendor_name %>
+    </ul>   
+    <%= submit_tag "Add Shoe" %>    
+  </div>
+
+</div>
+<% end %>
+<% end %>

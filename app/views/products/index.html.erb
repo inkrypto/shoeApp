@@ -1,0 +1,27 @@
+          <h1>Shoe Store</h1>
+      <div class="container">
+        <div class="row">
+          <% @products.each do |product|%>
+            <div class="col-md-3">
+              <div class="well">
+                  <h6>Added on <%=  product.started_at %></h6> 
+                  <h3><%= number_to_currency(product.price) %></h3>
+                  <h4><%= product.special_price %></h4> 
+                  <h5><%= product.title %></h5>
+                  <a href="/products/<%= product.id %>"><img src=<%= product.image %>></a>
+                  <ul>
+                    <li><h6><%= product.description %></h6>
+                    <li><h6><%= product.category %></h6>
+                    <h5>Subtotal = <%= product.subtotal %>
+                    <h5>Tax = <%= product.tax %>
+                    <h5>Total = <%= product.total_price %> 
+                  </ul>
+                  <strong><a href="/products/<%= product.id %>/edit">Edit</a><br>
+                  <a href="/products/<%= product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Delete</a>
+                </div>
+            </div>
+          <%end%> 
+        </div>   
+      </div>
+      
+

@@ -1,0 +1,24 @@
+<h3>Shoe Store</h3>
+
+<div class="col-md-12">
+<h1>Put a message in URL</h1>
+<h2><%= @messages %></h2>
+
+<h1>Put another message in URL</h1>
+<h2><%= @messages2 %></h2>
+
+<p><% @products.each do |product|%></p>
+
+<div class="row">
+  <div class="class col-md-3 col-sm-6">
+  <li><h3><%= number_to_currency(product.price) %></li></h3>
+  <li><%= product.title %></li>
+  <li><img src=<%= product.image %> style = "width:340px"></li>
+  <li><%= product.description %></li>
+  <li><%= product.category %></li>
+  <li><%= product.brand %></li>
+</div>
+
+<p><%end%></p>
+
+</div>

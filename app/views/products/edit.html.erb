@@ -1,0 +1,35 @@
+<h3>edit.html.erb<h3> 
+
+  <%= form_tag("/products/#{@product.id}", :method => :patch) do %>
+  
+
+  <div class="row">
+    <div class="class col-md-3 col-sm-6">
+    <ul>
+      <li>
+        <%= label_tag :price %> 
+        <%= text_field_tag :price, @product.price %>  
+      </li>
+      <li>
+        <%= label_tag :title %> 
+        <%= text_field_tag :title, @product.title %>
+      <li>
+        <%= label_tag :image %> 
+        <%= text_field_tag :image, @product.image %>
+      </li>
+      <li>
+        <%= label_tag :description %> 
+        <%= text_field_tag :description, @product.description %>
+      </li>
+      <li>
+        <%= label_tag :category %> 
+        <%= text_field_tag :category, @product.category %>
+      </li>
+      <li>
+        <%= label_tag :@product.vendor.name %> 
+        <%= text_field_tag :@product.vendor.name, @vendor.name %>
+      </ul>   
+        <%= submit_tag "Edit Shoe" %>    
+    </div>
+  </div>
+  <% end %>
