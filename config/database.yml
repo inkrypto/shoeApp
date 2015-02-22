@@ -48,8 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: Minicap
-  username: Minicap
-  password: <%= ENV['MYSQL-APP_DATABASE_PASSWORD'] %>
+  database: shoes-production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
 
