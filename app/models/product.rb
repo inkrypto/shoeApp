@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
 belongs_to :vendor
 has_many   :product_options
 has_many   :orders
+has_many   :carted_products, :through => :orders
 
     def special_price 
       if price < 200

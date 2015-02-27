@@ -1,0 +1,7 @@
+<h1>Shopping Cart</h1>
+<!-- Show all products associated with carted -->
+
+<% @carted_products.each do |product| %>
+  <p><%= product.title %></p>
+
+<% end %>
