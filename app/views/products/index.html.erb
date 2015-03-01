@@ -16,8 +16,11 @@
                     <h5>Tax = <%= product.tax %>
                     <h5>Total = <%= product.total_price %> 
                   </ul>
+
+                  <% if user_signed_in? && current_user.admin %>
                   <strong><a href="/products/<%= product.id %>/edit">Edit</a><br>
                   <a href="/products/<%= product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Delete</a>
+                    <% end %>
                 </div>
             </div>
           <%end%> 

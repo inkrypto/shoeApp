@@ -31,6 +31,9 @@ class ProductsController < ApplicationController
   end
 
   def create
+
+      validates :name, presence: true
+      
       vendor = Vendor.find_by(:name => params[:vendor_name])
       product = Product.create({ :price => params[:price], :title => params[:title], :image => params[:image], :description => params[:description], :category => params[:category], :vendor_id => vendor.id }) 
 
@@ -40,8 +43,12 @@ class ProductsController < ApplicationController
 
 
   def edit
-    @product = Product.find(params[:id])
-
+    if user_signed_in? && current_user.admin
+      @product = Product.find(params[:id])
+    else
+      flash[:warning] = "Sign in first asshole"
+      redirect_to "/"
+    end
   end
 
   def update
