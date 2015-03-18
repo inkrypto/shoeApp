@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   get '/' => 'products#index'
   get '/products' => 'products#index'
   get '/products/messages' => 'products#messages'
